@@ -1,0 +1,98 @@
+﻿@{
+    ViewData["Title"] = "Dynamic Scoring";
+}
+
+<link rel="stylesheet" href="~/css/scoring.css" />
+
+<div class="container py-4">
+
+    <!-- Header -->
+    <div class="mb-4">
+        <h3 class="fw-bold mb-1">Form Scoring Aplikasi</h3>
+        <p class="text-muted mb-0">
+            Implementasi soal test DMS: nilai bobot dapat diubah
+            secara dinamis dan perhitungan akan mengikuti.
+        </p>
+    </div>
+
+    <!-- Informasi Aplikasi -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="fw-bold mb-0">Informasi Aplikasi</h5>
+                <span class="badge bg-secondary text-white px-3 py-2">Informasi Aplikasi</span>
+            </div>
+
+            <form id="formAplikasi" class="row g-3">
+                <div class="col-md-4">
+                    <label class="form-label">No Aplikasi</label>
+                    <input type="text" class="form-control form-control-sm" value="DMC-SCR-001">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Nama</label>
+                    <input type="text" class="form-control form-control-sm" value="Afril Heru Fawaid">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Tempat Lahir</label>
+                    <input type="text" class="form-control form-control-sm" value="Kediri">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Tanggal Lahir</label>
+                    <input type="date" class="form-control form-control-sm" value="1999-04-21">
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Jenis Kelamin</label>
+                    <select class="form-select form-select-sm">
+                        <option selected>Laki-laki</option>
+                        <option>Perempuan</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label class="form-label">Kode Pos</label>
+                    <input type="text" class="form-control form-control-sm" value="64181">
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Alamat</label>
+                    <textarea class="form-control form-control-sm" rows="2">Jl. Imam Bonjol No. 104 Kel. Gabru Kec. Gurah Kab. Kediri</textarea>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="card mb-4">
+        <div class="card-body">
+            <!-- Tabel Scoring -->
+            <div class="d-flex justify-content-between align-items-center mb-2">
+                <h5 class="fw-bold mb-0">Tabel Scoring</h5>
+                <span class="badge bg-warning text-dark px-3 py-2">Informasi 1 - 6</span>
+            </div>
+
+            <div class="table-responsive">
+                <table id="tblScoring" class="table table-bordered table-sm align-middle">
+                    <thead class="bg-light">
+                        <tr>
+                            <th style="width: 12%">GROUP</th>
+                            <th style="width: 8%">BOBOT B (%)</th>
+                            <th style="width: 18%">GROUP ITEM</th>
+                            <th style="width: 8%">BOBOT D (%)</th>
+                            <th>ITEM</th>
+                            <th style="width: 8%">PILIH</th>
+                            <th style="width: 8%">BOBOT F</th>
+                            <th style="width: 10%">BOBOT F*D</th>
+                            <th style="width: 12%">SUM H × BOBOT B</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="summaryGroup" class="mt-4"></div>
+    <div id="finalResult" class="mt-3"></div>
+
+</div>
+
+<script src="~/js/scoring.js"></script>
